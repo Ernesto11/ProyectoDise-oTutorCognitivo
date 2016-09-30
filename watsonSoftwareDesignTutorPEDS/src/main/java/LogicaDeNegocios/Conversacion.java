@@ -25,19 +25,19 @@ public class Conversacion {
 
 	}
 	
-	public void consultarPregunta(String msg)
+	public String consultarPregunta(String pPregunta)
 	{
 
-	    MessageRequest newMessage = new MessageRequest.Builder().inputText(msg).build();  
-	    MessageResponse response = service.message(espacioTrabajo, newMessage).execute();
-	    respuesta = response.toString();
+	    MessageRequest nuevoMensaje = new MessageRequest.Builder().inputText(pPregunta).build();  
+	    MessageResponse respuesta = service.message(espacioTrabajo, nuevoMensaje).execute();
+	    return obtenerRespuesta(respuesta.toString());
 
 	}
 	
-	public String obtenerRespuesta()
+	public String obtenerRespuesta(String pRespuestaJson)
 	{
 		
-		JsonElement jelement = new JsonParser().parse(respuesta);
+		JsonElement jelement = new JsonParser().parse(pRespuestaJson);
 	    JsonObject  jobject = jelement.getAsJsonObject();
 	    
 	    jelement = jobject.get("output");
