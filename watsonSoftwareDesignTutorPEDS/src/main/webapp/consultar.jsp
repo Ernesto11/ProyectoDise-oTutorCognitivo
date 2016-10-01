@@ -25,24 +25,28 @@
         <div class="contentBox">
     	<div class="innerBox">
     	  <form name="form"  action="ServletConsulta"  method="post" >
-    	    <p>Seleccione la categoria de la consulta:</p><br>
+    	    <p>Seleccione la categoria de la consulta:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Idioma de Respuesta:</p><br>
             <p>            
-             <input type="radio" name="tipoConsulta" value="poo" checked>Programacion Orientada a objetos.<br>
-             <input type="radio" name="tipoConsulta" value="uml">Notacion UML para diagramas de Clase.<br>
-             <input type="radio" name="tipoConsulta" value="pds">Principios de Diseno. <br>
-            <p>Ingrese la pregunta: </p>
+             <input type="radio" name="tipoConsulta" value="poo" checked>Programacion Orientada a objetos.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="traducirConsulta" value="noTraducir" checked>Español<br><br>	
+             <input type="radio" name="tipoConsulta" value="uml">Notacion UML para diagramas de Clase..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="traducirConsulta" value="traducir">Inglés<br><br>
+             <input type="radio" name="tipoConsulta" value="pds">Principios de Diseno. <br><br>
+                      
+            
+            <p>Ingrese la pregunta: </p><br>
             <p>
-             <input type="text" name="pregunta" size="100" maxlength="100" class="form-control" placeholder="pregunta">
+             <input type="text" name="pregunta" size="79" maxlength="100" class="form-control" placeholder="pregunta"><br><br>
     	    <p>
-    	    <p><input type="submit" value="Consultar">                        
+    	    <p>&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Consultar"><br><br>                                           
     	  </form>
     	  
     	        <jsp:useBean id="RespuestaBean" scope="request" class="wasdev.sample.servlet.RespuestaBean" />
           </h1>
     <p><span class="texto">Respuesta:  </span><span class="texto">
     <jsp:getProperty name="RespuestaBean" property="respuesta"/>                
-    </span><br/>
-
+    </span><br><br>
+    
+     
+	
     	  <div id="footer">Tutor Cognitivo</div>
 <!-- Please leave this in place after all of your content - thanks :) -->
         

@@ -1,8 +1,6 @@
 package wasdev.sample.servlet;
 
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,7 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
+
 import LogicaDeNegocios.Conversacion;
+import LogicaDeNegocios.Traducir;
 
 /**
  * Servlet implementation class ServletConsulta
@@ -33,25 +33,35 @@ public class ServletConsulta extends HttpServlet {
     {
    
     	Conversacion conversacion;
+    	Traducir traduciendo = new Traducir("11e3e5eb-5665-466a-9891-b09fb25f50bb","BGIGbBhCCFgx");
+    	
     	String tipoConsulta = request.getParameter("tipoConsulta").toString();
+    	String traducirConsulta = request.getParameter("traducirConsulta").toString();
 
         if("poo".equals(tipoConsulta))
         {
-        	conversacion = new Conversacion("35a4cbe1-56ec-4f9e-8b2a-ef80d3a77521","01sumefaccpZ","bea3b85e-8324-47b2-8072-460c6543ab76");    		
+        	conversacion = new Conversacion("8a14fea8-d65d-4a6e-b0e8-021cce7273cb","ue4A3US7D8Pr","92a995c1-6ec0-454f-a515-e4243b2b13c2");    		
         }
     	else{
     	    if("uml".equals(tipoConsulta))
     	    {
-    	    	conversacion = new Conversacion("35a4cbe1-56ec-4f9e-8b2a-ef80d3a77521","01sumefaccpZ","af022dfc-62a0-4b0c-baed-99c62046cb3c");
+    	    	conversacion = new Conversacion("8a14fea8-d65d-4a6e-b0e8-021cce7273cb","ue4A3US7D8Pr","41346011-39a9-4f93-8000-e11249bdfe23");
     		}
     		   else
-    		     conversacion = new Conversacion("35a4cbe1-56ec-4f9e-8b2a-ef80d3a77521","01sumefaccpZ","5c3ab848-0c00-46cd-9cda-a29f298955b0");
+    		     conversacion = new Conversacion("8a14fea8-d65d-4a6e-b0e8-021cce7273cb","ue4A3US7D8Pr","47d5264d-9f9d-418a-a61c-36fb794f214a");
     	    }
     	
-    	conversacion.consultarPregunta(request.getParameter("pregunta"));
-   
+    	
+        if ("traducir".equals(traducirConsulta)){
+        	RespuestaBean res = new RespuestaBean();
+        	res.setRespuesta(traduciendo.traducirEspañolIngles(conversacion.consultarPregunta(request.getParameter("pregunta"))));
+
+        	
+            request.setAttribute("RespuestaBean", res);
+            request.getRequestDispatcher("consultar.jsp").forward(request, response);
+        }
     	RespuestaBean res = new RespuestaBean();
-    	res.setRespuesta(conversacion.obtenerRespuesta());
+    	res.setRespuesta(conversacion.consultarPregunta(request.getParameter("pregunta")));
 
     	
         request.setAttribute("RespuestaBean", res);
