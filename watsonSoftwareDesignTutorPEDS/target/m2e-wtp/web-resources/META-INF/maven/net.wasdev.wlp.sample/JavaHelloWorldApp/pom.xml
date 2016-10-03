@@ -52,6 +52,16 @@
         	<artifactId>java-sdk</artifactId>
         	<version>3.3.0</version>
         </dependency>
+        <dependency>
+        	<groupId>com.ibm.watson.developer_cloud</groupId>
+        	<artifactId>java-wrapper</artifactId>
+        	<version>2.10.0</version>
+        </dependency>
+        <dependency>
+        	<groupId>com.itextpdf</groupId>
+        	<artifactId>itextpdf</artifactId>
+        	<version>5.5.9</version>
+        </dependency>
     </dependencies>
 
     <build>
