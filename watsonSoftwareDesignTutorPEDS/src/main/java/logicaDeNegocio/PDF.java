@@ -7,27 +7,25 @@ import java.util.*;
  */
 public class PDF extends Documento {
 
-    /**
-     * Default constructor
-     */
-    public PDF() {
-    }
-
-    /**
-     * @param pFuenteDeDatos 
-     * @param pContenido 
-     * @param pRutaDeGuardado
-     */
-    public void PDF(String pFuenteDeDatos, String pContenido, String pRutaDeGuardado) {
-        // TODO implement here
-    }
-
-    /**
-     * @return
-     */
-    public void generarArchivo() {
-        // TODO implement here
-
-    }
+	public PDF(String pFuenteDeDatos, String pContenido, String pRutaDeGuardado){
+		super(pFuenteDeDatos, pContenido, pRutaDeGuardado);
+		generarArchivo();
+	}
+	
+	public void generarArchivo()
+	{
+		/**try{
+			
+			FileOutputStream archivo = new FileOutputStream(getRutaDeGuardado()+".pdf");
+			Document nuevoDocumento = new Document();
+			PdfWriter.getInstance(nuevoDocumento, archivo);
+			nuevoDocumento.open();
+			nuevoDocumento.add(new Paragraph(titulo+"\n\n"+contenido));
+			nuevoDocumento.close();
+		}catch(Exception e)
+		{
+			//MOSTRAR MENSAJE DE ERROR, PERO EN LA CAPA DE PRESENTACION
+		}**/
+	}
 
 }

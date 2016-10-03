@@ -45,6 +45,11 @@ public abstract class Documento implements Traducible {
 		titulo += "  || Fecha de creación: " + getFechaDeCreacion();
 	}
 	
+	public String getRutaDeGuardado()
+	{
+		return rutaDeGuardado;
+	}
+	
  
     /**
      * @return

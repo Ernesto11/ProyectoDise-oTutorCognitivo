@@ -7,27 +7,27 @@ import java.util.*;
  */
 public class TXT extends Documento {
 
-    /**
-     * Default constructor
-     */
-    public TXT() {
-    }
-
-    /**
-     * @param pFuenteDeDatos 
-     * @param pContenido 
-     * @param pRutaDeGuardado
-     */
-    public void TXT(String pFuenteDeDatos, String pContenido, String pRutaDeGuardado) {
-        // TODO implement here
-    }
-
-    /**
-     * @return
-     */
-    public void generarArchivo() {
-        // TODO implement here
-
-    }
+	public TXT (String pFuenteDeDatos, String pContenido, String pRutaDeGuardado){
+		super(pFuenteDeDatos, pContenido, pRutaDeGuardado);
+		generarArchivo();
+	}
+	
+	public void generarArchivo()
+	{
+		/**try{
+			File archivo = new File(rutaDeGuardado+".txt");
+			BufferedWriter bufferEscritura;
+			bufferEscritura= new BufferedWriter(new FileWriter(archivo));
+			bufferEscritura.write(titulo);
+			bufferEscritura.newLine();
+			bufferEscritura.newLine();
+			bufferEscritura.write(contenido);
+			bufferEscritura.close();
+		
+		}catch(Exception e)
+		{
+			//MOSTRAR MENSAJE DE ERROR, PERO EN LA CAPA DE PRESENTACION
+		}**/
+	}
 
 }
