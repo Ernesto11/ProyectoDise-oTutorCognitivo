@@ -4203,7 +4203,7 @@
 											"lineColor": "#000000",
 											"fillColor": "#ffffff",
 											"fontColor": "#000000",
-											"font": "Arial;13;0",
+											"font": "Arial;13;2",
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
@@ -17306,7 +17306,7 @@
 									],
 									"concurrency": "sequential",
 									"isQuery": false,
-									"isAbstract": false
+									"isAbstract": true
 								},
 								{
 									"_type": "UMLOperation",
