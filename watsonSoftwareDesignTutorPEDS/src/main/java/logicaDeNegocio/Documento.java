@@ -47,13 +47,16 @@ public abstract class Documento implements Traducible {
      */
     public void generarArchivo() {
         // TODO implement here
-        return null;
+        
     }
 
     /**
      * @param pTexto 
      * @return
      */
-    public abstract String traducirAIngles(String pTexto);
+    public String traducirAIngles(String pTexto)
+    {
+    	return "";
+    }
 
 }

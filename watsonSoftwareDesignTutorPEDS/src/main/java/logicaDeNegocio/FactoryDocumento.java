@@ -2,6 +2,8 @@ package logicaDeNegocio;
 
 import java.util.*;
 
+import dto.DTO_Documento;
+
 /**
  * 
  */
@@ -17,7 +19,7 @@ public class FactoryDocumento implements AbstractFactoryDocumento {
      * @param DTO_Documento 
      * @return
      */
-    public PDF crearPDF(void DTO_Documento) {
+    public PDF crearPDF(DTO_Documento pDocumento) {
         // TODO implement here
         return null;
     }
@@ -26,21 +28,10 @@ public class FactoryDocumento implements AbstractFactoryDocumento {
      * @param DTO_Documento 
      * @return
      */
-    public TXT crearTXT(void DTO_Documento) {
+    public TXT crearTXT(DTO_Documento pDocumento) {
         // TODO implement here
         return null;
     }
 
-    /**
-     * @param DTO_Documento 
-     * @return
-     */
-    public abstract PDF crearPDF(void DTO_Documento);
-
-    /**
-     * @param DTO_Documento 
-     * @return
-     */
-    public abstract TXT crearTXT(void DTO_Documento);
 
 }

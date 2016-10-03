@@ -8,11 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
-
-import LogicaDeNegocios.Conversacion;
-import LogicaDeNegocios.Traducir;
+import LogicaDeNegocios1.Conversacion;
+import LogicaDeNegocios1.Traducir;
 
 /**
  * Servlet implementation class ServletConsulta

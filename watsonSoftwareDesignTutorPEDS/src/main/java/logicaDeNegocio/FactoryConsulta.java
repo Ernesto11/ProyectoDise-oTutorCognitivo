@@ -2,6 +2,8 @@ package logicaDeNegocio;
 
 import java.util.*;
 
+import dto.DTO_Consulta;
+
 /**
  * 
  */
@@ -26,15 +28,5 @@ public class FactoryConsulta implements AbstractFactoryConsulta {
     public void crearConsultaPorTexto(DTO_Consulta pObjetoDTO) {
         // TODO implement here
     }
-
-    /**
-     * @param pObjetoDTO
-     */
-    public abstract void crearConsultaPorVoz(DTO_Consulta pObjetoDTO);
-
-    /**
-     * @param pObjetoDTO
-     */
-    public abstract void crearConsultaPorTexto(DTO_Consulta pObjetoDTO);
 
 }

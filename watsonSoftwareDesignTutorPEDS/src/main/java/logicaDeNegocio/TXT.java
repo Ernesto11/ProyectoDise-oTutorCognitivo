@@ -27,7 +27,7 @@ public class TXT extends Documento {
      */
     public void generarArchivo() {
         // TODO implement here
-        return null;
+
     }
 
 }

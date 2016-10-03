@@ -1,4 +1,4 @@
-package LogicaDeNegocios;
+package LogicaDeNegocios1;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -10,18 +10,17 @@ import com.ibm.watson.developer_cloud.conversation.v1.model.MessageRequest;
 import com.ibm.watson.developer_cloud.conversation.v1.model.MessageResponse;
 
 
-public class Conversacion {
+public class Conversacion extends ServicioWatson{
 	
-	private ConversationService service;
+	private ConversationService servicioConversacion;
 	private String espacioTrabajo;
-	private String respuesta;
 	
-	
-	public Conversacion(String pNombreUsuario, String pContraseña, String pEspacioTrabajo)
+	public Conversacion(String pNombreUsuario, String pContrasena, String pEspacioTrabajo)
 	{
+		super(pNombreUsuario, pContrasena);
 		espacioTrabajo = pEspacioTrabajo;
-		service =  new ConversationService(ConversationService.VERSION_DATE_2016_07_11);
-		service.setUsernameAndPassword(pNombreUsuario, pContraseña);
+		servicioConversacion =  new ConversationService(ConversationService.VERSION_DATE_2016_07_11);
+		servicioConversacion.setUsernameAndPassword(nombreUsuario, contrasena);
 
 	}
 	
@@ -29,12 +28,12 @@ public class Conversacion {
 	{
 
 	    MessageRequest nuevoMensaje = new MessageRequest.Builder().inputText(pPregunta).build();  
-	    MessageResponse respuesta = service.message(espacioTrabajo, nuevoMensaje).execute();
-	    return obtenerRespuesta(respuesta.toString());
+	    MessageResponse respuesta = servicioConversacion.message(espacioTrabajo, nuevoMensaje).execute();
+	    return procesarRespuestaJson(respuesta.toString());
 
 	}
 	
-	public String obtenerRespuesta(String pRespuestaJson)
+	public String procesarRespuestaJson(String pRespuestaJson)
 	{
 		
 		JsonElement jelement = new JsonParser().parse(pRespuestaJson);
@@ -46,15 +45,9 @@ public class Conversacion {
 	    JsonArray jarray = jobject.getAsJsonArray("text");
 	    
 	    if(jarray.size()>0)
-	    	return respuesta = jarray.get(0).toString();
+	    	return jarray.get(0).toString();
 	    else
-	    	return respuesta = "No se encontró una respuesta valida para la pregunta.";
+	    	return "No se encontró una respuesta valida para la pregunta.";
 	}
 	
-	public String getRespuesta()
-	{
-		return respuesta;
-	}
-	
-
 }

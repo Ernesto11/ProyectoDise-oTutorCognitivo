@@ -34,25 +34,6 @@ public class FactoryServicios implements AbstractFactoryServicios {
         // TODO implement here
     }
 
-    /**
-     * 
-     */
-    public void crearServicioConversacion() {
-        // TODO implement here
-    }
-
-    /**
-     * 
-     */
-    public void crearServicioTraducir() {
-        // TODO implement here
-    }
-
-    /**
-     * 
-     */
-    public void crearServicioVozATexto() {
-        // TODO implement here
-    }
+  
 
 }

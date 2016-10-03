@@ -1,4 +1,4 @@
-package LogicaDeNegocios;
+package LogicaDeNegocios1;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -8,26 +8,27 @@ import com.ibm.watson.developer_cloud.language_translation.v2.LanguageTranslatio
 import com.ibm.watson.developer_cloud.language_translation.v2.model.Language;
 import com.ibm.watson.developer_cloud.language_translation.v2.model.TranslationResult;
 
-public class Traducir {
+public class Traducir extends ServicioWatson {
 	
 	LanguageTranslation servicioTraducir;
 	
 	public Traducir(String pNombreUsuario, String pContrasena)
 	{
+		super(pNombreUsuario, pContrasena);
 		servicioTraducir =  new LanguageTranslation();
-		servicioTraducir.setUsernameAndPassword(pNombreUsuario, pContrasena);
+		servicioTraducir.setUsernameAndPassword(nombreUsuario, contrasena);
 	}
 	
 	public String traducirEspañolIngles(String pTexto)
 	{
 	    TranslationResult resultadoTraduccion = servicioTraducir.translate(pTexto,Language.SPANISH,Language.ENGLISH).execute();
-	    return obtenerRespuesta(resultadoTraduccion.toString());
+	    return procesarRespuestaJson(resultadoTraduccion.toString());
 	}
 	
-	public String obtenerRespuesta(String pRespuesta)
+	public String procesarRespuestaJson(String pRespuestaJson)
 	{
 		
-		JsonElement jelement = new JsonParser().parse(pRespuesta);
+		JsonElement jelement = new JsonParser().parse(pRespuestaJson);
 	    JsonObject  jobject = jelement.getAsJsonObject();
 	    
 	    JsonArray jarray = jobject.getAsJsonArray("translations");

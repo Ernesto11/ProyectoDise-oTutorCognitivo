@@ -43,7 +43,6 @@ public class Pregunta {
      */
     public void registrarRespuesta(String pContenidoRespuesta) {
         // TODO implement here
-        return null;
     }
 
 }

@@ -1,4 +1,4 @@
-package LogicaDeNegocios;
+package LogicaDeNegocios1;
 
 import java.io.File;
 
@@ -19,10 +19,10 @@ public class VozATexto {
 		serviceVozTexto =  new SpeechToText();
 		serviceVozTexto.setUsernameAndPassword(pNombreUsuario, pContrasena);
 	}
-	public void convertirVozTexto(){
+	public void convertirVozTexto(String pRuta){
 		
 	
-		SpeechResults resultado =  serviceVozTexto.recognize(new File("audio-file.flac")).execute();
+		SpeechResults resultado =  serviceVozTexto.recognize(new File(pRuta)).execute();
 		System.out.println(obtenerRespuesta(resultado.toString()));
 		
 	}

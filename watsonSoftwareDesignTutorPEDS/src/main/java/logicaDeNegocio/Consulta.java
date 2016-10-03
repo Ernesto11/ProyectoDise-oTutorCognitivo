@@ -55,7 +55,7 @@ public abstract class Consulta implements Traducible {
      */
     public void setContenidoPregunta(String pContenidoPregunta) {
         // TODO implement here
-        return null;
+       
     }
 
     /**
@@ -75,10 +75,5 @@ public abstract class Consulta implements Traducible {
         return "";
     }
 
-    /**
-     * @param pTexto 
-     * @return
-     */
-    public abstract String traducirAIngles(String pTexto);
 
 }

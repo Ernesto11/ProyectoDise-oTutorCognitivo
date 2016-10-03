@@ -1,5 +1,6 @@
 package logicaDeNegocio;
 
+import java.io.File;
 import java.util.*;
 
 /**
@@ -48,10 +49,5 @@ public class Voz extends Consulta {
         // TODO implement here
         return "";
     }
-
-    /**
-     * @return
-     */
-    public abstract ArrayList<String> hacerConsulta();
 
 }

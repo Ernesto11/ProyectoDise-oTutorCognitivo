@@ -2,6 +2,8 @@ package logicaDeNegocio;
 
 import java.util.*;
 
+import dto.DTO_Registro;
+
 /**
  * 
  */
@@ -17,15 +19,11 @@ public class FactoryRegistro implements AbstractFactoryRegistro {
      * @param DTO_Registro 
      * @return
      */
-    public Registro crearRegistro(void DTO_Registro) {
+    public Registro crearRegistro(DTO_Registro pRegistro) {
         // TODO implement here
         return null;
     }
 
-    /**
-     * @param DTO_Registro 
-     * @return
-     */
-    public abstract Registro crearRegistro(void DTO_Registro);
+
 
 }

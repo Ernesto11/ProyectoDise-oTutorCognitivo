@@ -46,7 +46,7 @@ public class Registro {
      */
     public void registrarPregunta(Pregunta pPregunta) {
         // TODO implement here
-        return null;
+        
     }
 
     /**
@@ -55,7 +55,7 @@ public class Registro {
      */
     public void registrarRespuestas(String pContenidoRespuesta) {
         // TODO implement here
-        return null;
+
     }
 
 }

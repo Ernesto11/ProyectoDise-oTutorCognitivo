@@ -33,9 +33,6 @@ public class Texto extends Consulta {
         return null;
     }
 
-    /**
-     * @return
-     */
-    public abstract ArrayList<String> hacerConsulta();
+
 
 }
